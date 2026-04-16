@@ -125,59 +125,6 @@ function setupScrollReveal() {
   revealTargets.forEach((element) => observer.observe(element));
 }
 
-function setupHeroCursor() {
-  const hero = document.querySelector("[data-hero-cursor]");
-
-  if (!hero || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-    return;
-  }
-
-  const cursor = document.createElement("div");
-  cursor.className = "hero-cursor";
-  cursor.setAttribute("aria-hidden", "true");
-  document.body.append(cursor);
-
-  let rafId = 0;
-  let pointerX = 0;
-  let pointerY = 0;
-
-  const render = () => {
-    cursor.style.left = `${pointerX}px`;
-    cursor.style.top = `${pointerY}px`;
-    rafId = 0;
-  };
-
-  const updateCursor = (event) => {
-    pointerX = event.clientX;
-    pointerY = event.clientY;
-
-    if (!rafId) {
-      rafId = window.requestAnimationFrame(render);
-    }
-  };
-
-  hero.addEventListener("pointerenter", (event) => {
-    document.body.classList.add("hero-cursor-active");
-    cursor.classList.add("is-visible");
-    updateCursor(event);
-  });
-
-  hero.addEventListener("pointermove", updateCursor);
-
-  hero.addEventListener("pointerleave", () => {
-    document.body.classList.remove("hero-cursor-active");
-    cursor.classList.remove("is-visible", "is-pressed");
-  });
-
-  hero.addEventListener("pointerdown", () => {
-    cursor.classList.add("is-pressed");
-  });
-
-  hero.addEventListener("pointerup", () => {
-    cursor.classList.remove("is-pressed");
-  });
-}
-
 if (usageInput && usageValue && vehicleInput && tariffInput && savingsAmount && estimateCopy) {
   [usageInput, vehicleInput, tariffInput].forEach((element) => {
     element.addEventListener("input", updateEstimate);
@@ -189,4 +136,3 @@ if (usageInput && usageValue && vehicleInput && tariffInput && savingsAmount && 
 
 runTypewriter();
 setupScrollReveal();
-setupHeroCursor();

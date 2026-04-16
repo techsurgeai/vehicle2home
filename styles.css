@@ -27,10 +27,6 @@ body {
   background: var(--bg);
 }
 
-body.hero-cursor-active {
-  cursor: none;
-}
-
 img {
   max-width: 100%;
   display: block;
@@ -147,47 +143,6 @@ p {
 .hero {
   background: var(--deep);
   color: #edf5f4;
-}
-
-.hero-cursor {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 30;
-  width: 118px;
-  height: 118px;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0;
-  transform: translate3d(-50%, -50%, 0) scale(0.7);
-  background:
-    radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.12) 28%, rgba(255, 109, 75, 0.14) 55%, rgba(255, 109, 75, 0) 72%);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(3px);
-  mix-blend-mode: screen;
-  transition: opacity 180ms ease, transform 180ms ease;
-}
-
-.hero-cursor::before {
-  content: "Explore";
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.hero-cursor.is-visible {
-  opacity: 1;
-  transform: translate3d(-50%, -50%, 0) scale(1);
-}
-
-.hero-cursor.is-pressed {
-  transform: translate3d(-50%, -50%, 0) scale(0.92);
 }
 
 .nav {
@@ -1469,15 +1424,5 @@ input[type="range"]::-moz-range-thumb {
 
   .details-article {
     width: min(100vw - 32px, 760px);
-  }
-}
-
-@media (hover: none), (pointer: coarse) {
-  body.hero-cursor-active {
-    cursor: auto;
-  }
-
-  .hero-cursor {
-    display: none;
   }
 }
