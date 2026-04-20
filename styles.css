@@ -1656,6 +1656,92 @@ input[type="range"]::-moz-range-thumb {
   background: #fbfaf7;
 }
 
+.case-studies-showcase {
+  padding-top: 92px;
+  padding-bottom: 128px;
+}
+
+.case-study-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(360px, 0.9fr);
+  gap: 40px;
+  align-items: start;
+  padding: 38px 0 46px;
+  border-top: 1px solid rgba(15, 45, 51, 0.08);
+}
+
+.case-study-feature:first-of-type {
+  margin-top: 28px;
+}
+
+.case-study-media img {
+  width: 100%;
+  aspect-ratio: 1.55;
+  object-fit: cover;
+  border-radius: 0;
+  background: #dfe7e4;
+}
+
+.case-study-copy {
+  max-width: 540px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-study-copy h3 {
+  font-size: clamp(2.1rem, 3vw, 3.05rem);
+  line-height: 1.08;
+  color: #0f2d33;
+}
+
+.case-study-copy p {
+  margin-top: 34px;
+  font-size: 1.08rem;
+  line-height: 1.6;
+  color: #24363c;
+}
+
+.case-study-copy a {
+  margin-top: 24px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--coral);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+
+.case-study-author {
+  margin-top: auto;
+  padding-top: 54px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.case-study-author img {
+  width: 56px;
+  height: 56px;
+  border-radius: 0;
+  object-fit: cover;
+  background: #d6ddd9;
+}
+
+.case-study-author strong,
+.case-study-author span {
+  display: block;
+}
+
+.case-study-author strong {
+  font-size: 1.05rem;
+  color: #0f2d33;
+}
+
+.case-study-author span {
+  margin-top: 6px;
+  color: #6e7d84;
+}
+
 .product-challenge h2,
 .product-v2h h2,
 .product-savings h2 {
@@ -1697,7 +1783,8 @@ input[type="range"]::-moz-range-thumb {
   .benefit-grid,
   .timeline,
   .news-layout,
-  .savings-layout {
+  .savings-layout,
+  .case-study-feature {
     grid-template-columns: 1fr;
   }
 
@@ -1716,6 +1803,19 @@ input[type="range"]::-moz-range-thumb {
 
   .story-item {
     grid-template-columns: 96px 1fr;
+  }
+
+  .case-study-copy {
+    max-width: none;
+  }
+
+  .case-study-copy p {
+    margin-top: 20px;
+  }
+
+  .case-study-author {
+    margin-top: 0;
+    padding-top: 28px;
   }
 
   .page-nav {
